@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Metaetiqueta de viewport para asegurar un diseño responsivo en móviles y tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Personal - Desarrollador Web</title>
+
+    <!-- Vínculo a Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Vínculo al archivo CSS externo -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- 1. ENCABEZADO con navegación integrada -->
+    <header>
+  <div class="header-inner">
+        <div class="logo">
+            <h1>Mi Portafolio</h1>
+        </div>
+        <!-- 2. NAVEGACIÓN dentro del header -->
+        <nav>
+            <ul>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#tarjetas">Proyectos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#peliculas">Películas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 3. SECCIÓN PRINCIPAL -->
+    <main>
+
+        <!-- SUB-SECCIÓN: Presentación Personal -->
+        <!--
+          COMENTARIO 1:
+          Función: Presenta al autor con biografía y avatar gamer.
+          Mejora futura: Añadir botón de descarga de CV en PDF.
+        -->
+        <section id="sobre-mi">
+            <div class="section-inner">
+                <h2>Sobre mí</h2>
+                <div class="presentacion-contenedor">
+                    <div class="presentacion-imagen">
+                        <img src="img/avatar.png" alt="Avatar de Carlos Lovera, desarrollador web">
+                    </div>
+                    <div class="presentacion-texto">
+                        <p class="presentacion-rol">Mi nombre es Carlos Lovera</p>
+                        <p>Pronto técnico en desarrollo de software, con especialidad en Astro, Java y un poco de JavaScript. Mi objetico es ser un Desarrollador Back-end comprometido con la excelencia técnica y la resolución creativa de problemas. </p>
+                        <div class="tags">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+   <!-- SUB-SECCIÓN: Proyecto Personal -->
+<!--
+  COMENTARIO 2:
+  Función: Muestra el proyecto personal destacado en una tarjeta centrada.
+  Mejora futura: Añadir enlace real al repositorio de GitHub o sitio publicado.
+-->
+<section id="tarjetas">
+    <div class="section-inner">
+        <h2>Mi Proyecto</h2>
+        <div class="tarjeta-unica-contenedor">
+            <div class="tarjeta-unica">
+                <p class="tarjeta-label">Proyecto Personal</p>
+                <img src="img/proyectoUno.png" alt="Vista previa del proyecto personal">
+                <h3>Curso Astro</h3>
+                <p>Es una pagina web creada en astro con la finalidad de satisfacer las necesidades de los usuarios con bares, restaurantes y otros establecimientos de comida.</p>
+                <a href="https://github.com/Carloslovera/curso-astro-demo" class="tarjeta-btn">Ver proyecto</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- SUB-SECCIÓN: Habilidades -->
+        <!--
+          COMENTARIO 3:
+          Función: Tabla con tecnologías dominadas, a aprender y hobbies.
+          Mejora futura: Reemplazar texto por íconos SVG de cada tecnología.
+        -->
+        <section id="habilidades">
+            <div class="section-inner">
+                <h2>Habilidades y Tecnologías</h2>
+                <div class="tabla-contenedor">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tecnologías que domino</th>
+                                <th>Deseo aprender</th>
+                                <th>Mis Hobbies</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>HTML5 &amp; CSS3</td>
+                                <td>Python</td>
+                                <td>Leer ciencia ficción</td>
+                            </tr>
+                            <tr>
+                                <td>JavaScript, Java &amp; Astro</td>
+                                <td>Node.js</td>
+                                <td>Jugar basketball</td>
+                            </tr>
+                            <tr>
+                                <td>Git &amp; GitHub</td>
+                                <td>Swift</td>
+                                <td>Videojuegos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUB-SECCIÓN: Películas Favoritas -->
+        <!--
+          COMENTARIO 4:
+          Función: Muestra las 3 películas favoritas con póster y descripción.
+          Mejora futura: Agregar enlace al tráiler en YouTube de cada película.
+        -->
+        <section id="peliculas">
+            <div class="section-inner">
+                <h2>Mis 3 Películas Favoritas</h2>
+                <div class="peliculas-contenedor">
+
+                    <article class="pelicula">
+                        <h3>1. Dune</h3>
+                        <img src="img/dune.jpg" alt="Póster de la película Dune">
+                        <p>La historia de Paul Atreides, un joven noble que se convierte en el líder de una revolución en un planeta desértico. Basada en la obra de Frank Herbert.</p>
+                    </article>
+
+                    <article class="pelicula">
+                        <h3>2. La Momia</h3>
+                        <img src="img/la momia.jpg" alt="Póster de la película La Momia">
+                        <p>Una película de terror y aventura que lleva a los espectadores a través de tumbas antiguas y criaturas sobrenaturales.</p>
+                    </article>
+
+                    <article class="pelicula">
+                        <h3>3. Los Piratas del Caribe</h3>
+                        <img src="img/los piratas del caribe.jpg" alt="Póster de la película Los Piratas del Caribe">
+                        <p>Las hazañas del pirata Jack Sparrow en el Caribe, entre aventura, fantasía y humor.</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SUB-SECCIÓN: Formulario de Contacto -->
+        <!--
+          COMENTARIO 5:
+          Función: Formulario de contacto con campos básicos y validación HTML5.
+          Mejora futura: Integrar con Formspree o EmailJS para recibir mensajes reales.
+        -->
+        <section id="contacto">
+            <div class="section-inner">
+                <h2>Contacto</h2>
+                <form action="#" method="POST" class="formulario">
+                    <div class="campo">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="campo">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido" required>
+                    </div>
+                    <div class="campo">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="campo">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 4. PIE DE PÁGINA -->
+    <footer>
+        <div class="footer-contenido">
+            <p>&copy; 2026 Mi Portafolio Personal. Todos los derechos reservados.</p>
+            <div class="redes-sociales">
+                <a href="https://www.linkedin.com/in/carlos-a-lovera-r-bb5237252" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/Carloslovera" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

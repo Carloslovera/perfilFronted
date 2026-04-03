@@ -1,0 +1,580 @@
+/* =====================================================
+   PORTAFOLIO PERSONAL — styles.css
+   Autor: Desarrollador Web
+   Descripción: Estilos principales del portafolio.
+   Usa variables CSS, Flexbox, Grid, animaciones y diseño responsivo.
+   ===================================================== */
+
+/* =====================================================
+   1. VARIABLES CSS Y RESET BASE
+   ===================================================== */
+:root {
+    /* Paleta de colores */
+    --color-fondo: #0d0d1a;
+    --color-fondo-alt: #12122a;
+    --color-superficie: #1a1a35;
+    --color-borde: #2a2a4a;
+    --color-acento: #7c6af7;
+    --color-acento-hover: #9d8fff;
+    --color-texto: #e0e0f0;
+    --color-texto-suave: #8888aa;
+    --color-blanco: #ffffff;
+
+    /* Tipografía */
+   --fuente-principal: 'Roboto', sans-serif;
+   --fuente-display: 'Roboto', sans-serif;
+
+    /* Espaciado */
+    --espaciado-seccion: 5rem;
+    --radio-borde: 12px;
+
+    /* Sombras */
+    --sombra-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --sombra-acento: 0 0 20px rgba(124, 106, 247, 0.3);
+}
+
+/* Reset básico */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Aplicación de Google Fonts en todos los elementos */
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-acento);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-acento-hover);
+}
+
+ul {
+    list-style: none;
+}
+
+/* =====================================================
+   2. UTILIDADES GENERALES
+   ===================================================== */
+.section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+h2 {
+    font-family: var(--fuente-display);
+    font-size: 2.2rem;
+    color: var(--color-blanco);
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Subrayado decorativo en títulos de sección */
+h2::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 60%;
+    background: var(--color-acento);
+    margin-top: 0.4rem;
+    border-radius: 2px;
+}
+
+/* =====================================================
+   3. HEADER Y NAVEGACIÓN
+   ===================================================== */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(13, 13, 26, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-borde);
+    padding: 1rem 1.5rem;
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-family: var(--fuente-display);
+    font-size: 1.6rem;
+    color: var(--color-blanco);
+    letter-spacing: -0.5px;
+}
+
+.dot {
+    color: var(--color-acento);
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: var(--color-texto-suave);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover {
+    color: var(--color-blanco);
+    border-bottom-color: var(--color-acento);
+}
+
+/* =====================================================
+   4. SECCIONES GENERALES
+   ===================================================== */
+main > section {
+    padding: var(--espaciado-seccion) 0;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+main > section:nth-child(even) {
+    background-color: var(--color-fondo-alt);
+}
+
+/* =====================================================
+   5. SECCIÓN: SOBRE MÍ
+   — Flexbox: columnas para texto + imagen
+   ===================================================== */
+.presentacion-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.presentacion-texto {
+    flex: 1 1 300px;
+    font-size: 1.05rem;
+    color: var(--color-texto);
+}
+
+.presentacion-imagen {
+    flex: 0 0 auto;
+}
+
+.presentacion-imagen img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 3px solid var(--color-acento);
+    box-shadow: var(--sombra-acento);
+    object-fit: cover;
+    /* Animación: rotación del borde al cargar */
+    animation: aparecer 0.8s ease forwards;
+}
+
+/* =====================================================
+   6. SECCIÓN: PROYECTO PERSONAL — tarjeta única centrada
+   ===================================================== */
+.tarjeta-unica-contenedor {
+    display: flex;
+    justify-content: center;
+}
+
+.tarjeta-unica {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    padding: 2rem;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: var(--sombra-card);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta-unica:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-card), var(--sombra-acento);
+    border-color: var(--color-acento);
+}
+
+.tarjeta-label {
+    font-size: 0.7rem;
+    color: var(--color-acento);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.tarjeta-unica img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid var(--color-borde);
+    margin: 0 auto 1.2rem;
+    display: block;
+}
+
+.tarjeta-unica h3 {
+    font-size: 1.2rem;
+    color: var(--color-blanco);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+}
+
+.tarjeta-unica p {
+    font-size: 0.9rem;
+    color: var(--color-texto-suave);
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
+
+.tarjeta-btn {
+    display: inline-block;
+    background-color: var(--color-acento);
+    color: var(--color-blanco);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.tarjeta-btn:hover {
+    background-color: var(--color-acento-hover);
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   7. SECCIÓN: HABILIDADES — Tabla estilizada
+   ===================================================== */
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+thead {
+    background-color: var(--color-acento);
+}
+
+thead th {
+    color: var(--color-blanco);
+    padding: 1rem 1.2rem;
+    text-align: left;
+    font-weight: 700;
+    font-family: var(--fuente-principal);
+    letter-spacing: 0.3px;
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--color-borde);
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: var(--color-superficie);
+}
+
+tbody td {
+    padding: 0.85rem 1.2rem;
+    color: var(--color-texto);
+}
+
+/* =====================================================
+   8. SECCIÓN: FORMULARIO DE CONTACTO
+   ===================================================== */
+.formulario {
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.campo label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.campo input {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+    color: var(--color-texto);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+/* Animación: borde iluminado al hacer foco en el input */
+.campo input:focus {
+    border-color: var(--color-acento);
+    box-shadow: 0 0 0 3px rgba(124, 106, 247, 0.2);
+}
+
+.campo input::placeholder {
+    color: var(--color-texto-suave);
+    opacity: 0.7;
+}
+
+/* Estilo del botón submit */
+.btn-submit {
+    align-self: flex-start;
+    background-color: var(--color-acento);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 8px;
+    padding: 0.85rem 2rem;
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    /* TRANSICIÓN: efecto hover en botón */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--color-acento-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-acento);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* =====================================================
+   9. SECCIÓN: PELÍCULAS FAVORITAS
+   — Flexbox: fila de artículos con wrap
+   ===================================================== */
+.peliculas-contenedor {
+    display: flex;
+    gap: 1.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pelicula {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    overflow: hidden;
+    flex: 1 1 220px;
+    max-width: 280px;
+    box-shadow: var(--sombra-card);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.pelicula:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-acento);
+}
+
+.pelicula img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+
+.pelicula-info h3 {
+    color: var(--color-blanco);
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+}
+
+.anio {
+    display: inline-block;
+    font-size: 0.8rem;
+    background-color: var(--color-acento);
+    color: white;
+    padding: 0.15rem 0.6rem;
+    border-radius: 20px;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+}
+
+.pelicula-info p {
+    font-size: 0.88rem;
+    color: var(--color-texto-suave);
+    line-height: 1.6;
+}
+
+/* =====================================================
+   10. FOOTER
+   ===================================================== */
+footer {
+    background-color: var(--color-fondo-alt);
+    border-top: 1px solid var(--color-borde);
+    padding: 2rem 1.5rem;
+}
+
+.footer-contenido {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-contenido p {
+    color: var(--color-texto-suave);
+    font-size: 0.9rem;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.redes-sociales a {
+    color: var(--color-texto-suave);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 20px;
+    transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    color: var(--color-blanco);
+    border-color: var(--color-acento);
+    background-color: var(--color-acento);
+}
+
+/* =====================================================
+   11. ANIMACIONES (@keyframes)
+   ===================================================== */
+
+/* Animación de aparición con opacidad y desplazamiento */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicación de la animación a secciones al cargar */
+main > section {
+    animation: aparecer 0.7s ease forwards;
+}
+
+/* =====================================================
+   12. DISEÑO RESPONSIVO (Media Queries)
+   ===================================================== */
+
+/* Tablets y móviles grandes */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+    }
+
+    nav ul {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .presentacion-contenedor {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .presentacion-imagen img {
+        width: 160px;
+        height: 160px;
+        margin: 0 auto;
+    }
+
+    .footer-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .redes-sociales {
+        justify-content: center;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h2::after {
+        margin: 0.4rem auto 0;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    :root {
+        --espaciado-seccion: 3rem;
+    }
+
+
+    .peliculas-contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pelicula {
+        max-width: 100%;
+    }
+
+    .btn-submit {
+        width: 100%;
+        text-align: center;
+    }
+}
