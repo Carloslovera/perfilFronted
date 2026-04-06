@@ -24,7 +24,7 @@ Este proyecto consiste en el desarrollo de un portafolio web personal como parte
 * [x] Proyecto publicado utilizando GitHub Pages.
 * [x] En este README se indica la URL de GitHub Pages.
 
-🔗 URL del proyecto: *(AQUÍ DEBES PEGAR TU LINK DE GITHUB PAGES)*
+🔗 URL del proyecto: * https://perfil-fronted-one.vercel.app/
 
 ---
 
